@@ -1,16 +1,27 @@
 //import atm.js
-const atm = require('atm.js');
+const atm = require('./atm');
 
 //contain user menu for interacting with ATM
 const prompt = require('prompt-sync')();
 
 //Enter PIN
-//User validation
+atm.pin()
+
+let menuOption = prompt("Choose options: <1> for account balance, <2> for deposit, <3> for withdraw, or <4> for exit: ")
 
 
-//Choose options: 1 for account balance, 2 for deposit, 3 for withdrawl, or 4 for exit
+switch (menuOption){
+    case "1":
+        atm.balance();
+        break;
+    case "2":
+        atm.deposit();
+        break;
+    case "3":
+        atm.withdraw();
+        break;
+    case "4":
+        break;//?
+}
+
 //after displaying info, return to this menu
-
-//deposit/withdrawl - prompt to enter amount, success message and current balance
-
-//quit - exit message
