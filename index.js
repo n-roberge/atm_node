@@ -1,11 +1,8 @@
-"use strict";
-
 //import atm.js
+const atm = require('atm.js');
+
 //contain user menu for interacting with ATM
 const prompt = require('prompt-sync')();
-
-//Welcome message
-console.log("Welcome to the ATM. First, enter your PIN:")
 
 //Enter PIN
 //User validation

@@ -1,7 +1,5 @@
-"use strict";
-
 //import account.js
-const account = require('account.js');
+const account = require('./account');
 
 //prompt-sync module
 const prompt = require('prompt-sync')();
@@ -36,10 +34,26 @@ function deposit(){
 
 //validates the PIN function
 function validatePin(){
-    const inputPIN = prompt()
-}
+    console.log("Welcome to the ATM. First, enter your PIN:")
 
-//import account.js
+    //grabs correct pin from account.js
+    var {correctPin} = account.account
+
+    //asks user for pin
+    while (true){
+        const inputPIN = prompt()
+
+        if (inputPIN === correctPin){
+            console.log("PIN is correct: Proceed.")
+            break;
+        }
+        else{
+            console.log("Please try again. Enter four-digit PIN")
+        }
+    }
+}
+validatePin();
+
 //export to index.js
 module.exports.balance = getBalance;
 module.exports.withdraw = withdraw;
