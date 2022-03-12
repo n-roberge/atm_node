@@ -113,7 +113,7 @@ function pinValid(input){
 
 //validation for numerical input
 function amountValid(input){
-    if (isNaN(input)){
+    if (isNaN(input) || input === ""){
         console.log("Please enter a dollar amount.");
         return false;
     }
