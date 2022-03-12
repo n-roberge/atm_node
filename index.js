@@ -8,12 +8,12 @@ const prompt = require('prompt-sync')();
 atm.pin()
 
 //Main menu
-mainMenu()
+let menuOption;
+do{
+    menuOption = prompt("Choose options: <1> for account balance, <2> for deposit, <3> for withdraw, or <4> for exit: ")
 
-function mainMenu(){
-    let menuOption = prompt("Choose options: <1> for account balance, <2> for deposit, <3> for withdraw, or <4> for exit: ")
-
-    switch (menuOption){
+    switch (menuOption)
+    {
         case "1":
             atm.balance();
             break;
@@ -24,7 +24,8 @@ function mainMenu(){
             atm.withdraw();
             break;
         case "4":
-            break;//?
+            break;
     }
 }
+while(menuOption!=4)
 //TODO: some kind of loop for after displaying info, return to this menu

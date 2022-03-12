@@ -1,6 +1,3 @@
-//import atm
-const atm = require('./atm');
-
 //account object
 var account = {
     balance: 0,
