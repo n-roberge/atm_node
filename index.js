@@ -9,6 +9,7 @@ atm.pin()
 
 //Main menu
 let menuOption;
+
 do{
     menuOption = prompt("Select your option: <1> for account balance, <2> for deposit, <3> for withdraw, or <4> for exit: ")
 
@@ -28,4 +29,4 @@ do{
             break;
     }
 }
-while(menuOption!=4)
+while(menuOption!=4);

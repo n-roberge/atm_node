@@ -26,12 +26,12 @@ function withdraw(){
     //displays new balance
     getBalance();
 };
-withdraw()
+
 //deposit function
 function deposit(){
     //deposit to account.js
     console.log("Please enter the amount to deposit: ");
-    const depositAmount = Number(prompt());
+    const depositAmount = Number(promptFor("",amountValid));
     console.log(`Depositing: $${depositAmount}.`);
 
     //calculates new balance
@@ -74,8 +74,9 @@ function promptFor(input, valid){
     return response;
 };
 
+//valdiates PIN if it is four numbers
 function pinValid(input){
-    if (input = /^[0-9]{4}$/){
+    if (/^[0-9]{4}$/.test(input)){
         return true;
     }
     else{
@@ -94,6 +95,7 @@ function amountValid(input){
         return true;
     };
 };
+
 //export to index.js
 module.exports.balance = getBalance;
 module.exports.withdraw = withdraw;
