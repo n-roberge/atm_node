@@ -4,10 +4,12 @@ const account = require('./account');
 //prompt-sync module
 const prompt = require('prompt-sync')();
 
+let {balance} = account.account;
+
 //Balance function
 function getBalance(){
     //retrieve the balance from the account.js
-    let {balance} = account.account;
+    // let {balance} = account.account;
     console.log("Your current balance is: " + "$" + balance)
     return balance
 }
@@ -17,23 +19,27 @@ function withdraw(){
     //withdraw from account.js
     console.log("Please enter the amount to withdraw: ")
     const withdrawlAmount = Number(prompt());
-    console.log(`Withdrawing ${withdrawlAmount}.`);
+    console.log(`Withdrawing $${withdrawlAmount}.`);
 
-    getBalance();
+    //calculates new balance
+    let withdrawl = balance - withdrawlAmount;
+    balance = withdrawl;
 
-    return withdrawlAmount
+    //displays new balance
+    getBalance()
 }
 
 //deposit function
 function deposit(){
     //deposit to account.js
     console.log("Please enter the amount to deposit: ")
-    const depositlAmount = Number(prompt());
-    console.log(`Depositing ${withdrawlAmount}.`);
+    const depositAmount = Number(prompt());
+    console.log(`Depositing ${depositAmount}.`);
 
-    getBalance();
+    let deposit = balance + depositAmount;
+    balance = deposit;
 
-    return depositAmount
+    getBalance()
 }
 
 //validates the PIN function
